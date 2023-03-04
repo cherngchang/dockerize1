@@ -2,9 +2,14 @@ pipeline {
     agent any
     tools { maven 'M3' }
     stages {
-        stage('Build') {
+        stage('MAVEN Build') {
             steps {
                 bat 'mvn clean package'
+            }
+        }
+        stage('JIB Build IMAGE') {
+            steps {
+                bat 'mvn jib:build'
             }
         }
     }
