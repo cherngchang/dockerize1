@@ -78,6 +78,14 @@
               <image>docker.io/changking/my-app-jib</image>
             </to>
           </configuration>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>build</goal>
+              </goals>
+            </execution>
+          </executions>
       </plugin>
       </plugins>
     </pluginManagement>
