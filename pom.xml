@@ -76,10 +76,6 @@
           <configuration>
             <to>
               <image>docker.io/changking/my-app-jib</image>
-              <auth>
-              <username>changking</username>
-              <password>${env.REGISTRY_PASSWORD}</password>
-            </auth>
             </to>
           </configuration>
       </plugin>
