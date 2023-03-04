@@ -75,7 +75,11 @@
           <version>3.3.1</version>
           <configuration>
             <to>
-              <image>my-jib:latest</image>
+              <image>docker.io/changking/my-app-jib</image>
+              <auth>
+              <username>changking</username>
+              <password>${env.REGISTRY_PASSWORD}</password>
+            </auth>
             </to>
           </configuration>
       </plugin>
