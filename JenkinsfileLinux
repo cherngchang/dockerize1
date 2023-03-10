@@ -12,7 +12,10 @@ pipeline {
         stage('Init') {
             steps {
               checkout scm
-              sh 'echo "THIS IS ${env.build_desc}"'
+              sh '''
+                 #!/bin/bash
+                 echo "THIS IS \${env.build_desc}"
+              '''
             }
         }
         stage('Build') {
