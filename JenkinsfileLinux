@@ -1,13 +1,18 @@
 pipeline {
     agent { label 'cking168' }
     // tools { maven 'M3' }
+    options {
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: '5'))
+    }
+    environment {
+        build_desc = showBuildDesc()
+    }
     stages {
         stage('Init') {
             steps {
               checkout scm
-              script {
-                showBuildDesc()
-              }
+              sh 'echo THIS IS ${env.build_desc}'
             }
         }
         stage('Build') {
