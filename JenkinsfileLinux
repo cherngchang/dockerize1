@@ -11,7 +11,9 @@ pipeline {
     stages {
         stage('Init') {
             steps {
-              checkout scm
+              //checkout scm
+              echo "${env.build_desc}"
+              echo "================HERE================="
               sh 'env | sort'
             }
         }
