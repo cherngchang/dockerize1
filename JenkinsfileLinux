@@ -2,6 +2,14 @@ pipeline {
     agent { label 'cking168' }
     // tools { maven 'M3' }
     stages {
+        stage('Init') {
+            steps {
+              checkout scm
+              script {
+                showBuildDesc()
+              }
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean package'
